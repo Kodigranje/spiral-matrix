@@ -2,7 +2,7 @@
   "name": "spiral-matrix",
   "version": "1.0.0",
   "type": "module",
-  "description": "",
+  "description": "A few Ideas about Spiral Looping",
   "main": "helpers.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
