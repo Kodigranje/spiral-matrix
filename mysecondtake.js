@@ -52,28 +52,51 @@ let spiralOrder = function(matrix) {
             let el = matrix[bottom][i];
             finalArr.push(el);
         }
+
+        if (finalArr.length === elCount) {
+            break;
+        }
+
+        bottom = bottom - 1;
+
+        // 4th move - vertical upwards
+        for (let i = bottom; i >= top; i--) {
+            let el = matrix[i][left];
+            finalArr.push(el);
+        }
+
+        left = left + 1; // one position to the right
     }
 
     return finalArr;
 };
 
 // Tests for Spiral Order 2nd Take
-// let matrix = [[ 1, 2, 3],
-//              [ 4, 5, 6],
-//              [ 7, 8, 9]];
+let matrix = [[ 1, 2, 3],
+             [ 4, 5, 6],
+             [ 7, 8, 9]];
 
-// console.log(spiralOrder(matrix)); // [1,2,3,6,9,8,7,4,5]
+console.log(spiralOrder(matrix)); // [1,2,3,6,9,8,7,4,5]
 
-// matrix = [[1, 2, 3, 4],
-//           [5, 6, 7, 8],
-//           [9,10,11,12]];
+matrix = [[1, 2, 3, 4],
+          [5, 6, 7, 8],
+          [9,10,11,12]];
 
-// console.log(spiralOrder(matrix)); // [1,2,3,4,8,12,11,10,9,5,6,7]
+console.log(spiralOrder(matrix)); // [1,2,3,4,8,12,11,10,9,5,6,7]
 
-let matrix = [[1, 2, 3, 4, 5],
+matrix = [[1, 2, 3, 4, 5],
           [6, 7, 8, 9, 10],
           [11, 12, 13, 14, 15],
           [16, 17, 18, 19, 20]];
 
 console.log(spiralOrder(matrix));
-[1,2,3,4,5,10,15,20,19,18,17,16,11,6,7,8,9,14,13,12]
+// [1,2,3,4,5,10,15,20,19,18,17,16,11,6,7,8,9,14,13,12]
+
+matrix = [[1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9],
+          [10, 11, 12],
+          [13, 14, 15]];
+
+console.log(spiralOrder(matrix));
+// [1,  2,  3,  6, 9, 12, 15, 14, 13, 10, 7,  4, 5,  8, 11]
