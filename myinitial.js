@@ -1,5 +1,8 @@
 import { rowFwd, rowBckwd, matriceDown } from "./helpers.js" ;
 
+// Solution based on defining width and height
+// instead of 'milestones' (top, bottom, left and right)
+
 function spiralOrder(matrix) {
 
     let outputArr = [];
